@@ -30,7 +30,6 @@ final class ViewController: UIViewController {
         
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
-        blueSlider.minimumTrackTintColor = .blue
     }
     
     @IBAction func slidersAction(_ sender: UISlider) {
@@ -43,11 +42,10 @@ final class ViewController: UIViewController {
     }
     
     private func updateBackgroundColor() {
-        viewRGB.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1)
+        viewRGB.backgroundColor = UIColor(red: CGFloat(redSlider.value),
+                                          green: CGFloat(greenSlider.value),
+                                          blue: CGFloat(blueSlider.value),
+                                          alpha: 1)
     }
     
     private func setValue(for label: UILabel, from slider: UISlider) {
