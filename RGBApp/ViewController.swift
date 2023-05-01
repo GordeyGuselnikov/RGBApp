@@ -22,21 +22,24 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
+        
         updateBackgroundColor()
+        setValue(forLabel: redLabel, fromSlider: redSlider)
+        setValue(forLabel: greenLabel, fromSlider: greenSlider)
+        setValue(forLabel: blueLabel, fromSlider: blueSlider)
     }
 
     override func viewWillLayoutSubviews() {
         viewRGB.layer.cornerRadius = 10
-        
-        redSlider.minimumTrackTintColor = .red
-        greenSlider.minimumTrackTintColor = .green
     }
     
     @IBAction func slidersAction(_ sender: UISlider) {
         switch sender {
-        case redSlider: setValue(for: redLabel, from: redSlider)
-        case greenSlider: setValue(for: greenLabel, from: greenSlider)
-        default: setValue(for: blueLabel, from: blueSlider)
+        case redSlider: setValue(forLabel: redLabel, fromSlider: redSlider)
+        case greenSlider: setValue(forLabel: greenLabel, fromSlider: greenSlider)
+        default: setValue(forLabel: blueLabel, fromSlider: blueSlider)
         }
         updateBackgroundColor()
     }
@@ -48,11 +51,11 @@ final class ViewController: UIViewController {
                                           alpha: 1)
     }
     
-    private func setValue(for label: UILabel, from slider: UISlider) {
-            label.text = string(from: slider)
+    private func setValue(forLabel label: UILabel, fromSlider slider: UISlider) {
+        label.text = string(from: slider)
     }
     
     private func string(from slider: UISlider) -> String {
-            String(format: "%.2f", slider.value)
+        String(format: "%.2f", slider.value)
     }
 }
