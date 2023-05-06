@@ -35,9 +35,9 @@ final class ViewController: UIViewController {
     
     @IBAction func slidersAction(_ sender: UISlider) {
         switch sender {
-        case redSlider: setValue(forLabel: redLabel, fromSlider: redSlider)
+        case redSlider:   setValue(forLabel: redLabel, fromSlider: redSlider)
         case greenSlider: setValue(forLabel: greenLabel, fromSlider: greenSlider)
-        default: setValue(forLabel: blueLabel, fromSlider: blueSlider)
+        default:          setValue(forLabel: blueLabel, fromSlider: blueSlider)
         }
         updateBackgroundColor()
     }
