@@ -22,6 +22,8 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewRGB.layer.cornerRadius = 10
+        
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         
@@ -29,10 +31,6 @@ final class ViewController: UIViewController {
         setValue(forLabel: redLabel, fromSlider: redSlider)
         setValue(forLabel: greenLabel, fromSlider: greenSlider)
         setValue(forLabel: blueLabel, fromSlider: blueSlider)
-    }
-
-    override func viewWillLayoutSubviews() {
-        viewRGB.layer.cornerRadius = 10
     }
     
     @IBAction func slidersAction(_ sender: UISlider) {
@@ -45,10 +43,12 @@ final class ViewController: UIViewController {
     }
     
     private func updateBackgroundColor() {
-        viewRGB.backgroundColor = UIColor(red: CGFloat(redSlider.value),
-                                          green: CGFloat(greenSlider.value),
-                                          blue: CGFloat(blueSlider.value),
-                                          alpha: 1)
+        viewRGB.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
     }
     
     private func setValue(forLabel label: UILabel, fromSlider slider: UISlider) {
