@@ -20,9 +20,20 @@ final class BackgroundSettingsViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    @IBOutlet weak var redTextField: UITextField!
+    @IBOutlet weak var greenTextField: UITextField!
+    @IBOutlet weak var blueTextField: UITextField!
+    
+    // MARK: - Public Properties
+    var currentColor: UIColor!
+    
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewRGB.backgroundColor = currentColor
+        setSlidersWith(color: currentColor)
         
         viewRGB.layer.cornerRadius = 10
         
@@ -30,17 +41,18 @@ final class BackgroundSettingsViewController: UIViewController {
         greenSlider.minimumTrackTintColor = .green
         
         updateBackgroundColor()
-        setValue(forLabel: redLabel, fromSlider: redSlider)
-        setValue(forLabel: greenLabel, fromSlider: greenSlider)
-        setValue(forLabel: blueLabel, fromSlider: blueSlider)
+        
+        setValue(forLabel: redLabel, andTtextField: redTextField, fromSlider: redSlider)
+        setValue(forLabel: greenLabel, andTtextField: greenTextField, fromSlider: greenSlider)
+        setValue(forLabel: blueLabel, andTtextField: blueTextField, fromSlider: blueSlider)
     }
     
     // MARK: - IBActions
     @IBAction func slidersAction(_ sender: UISlider) {
         switch sender {
-        case redSlider:   setValue(forLabel: redLabel, fromSlider: redSlider)
-        case greenSlider: setValue(forLabel: greenLabel, fromSlider: greenSlider)
-        default:          setValue(forLabel: blueLabel, fromSlider: blueSlider)
+        case redSlider:   setValue(forLabel: redLabel, andTtextField: redTextField, fromSlider: redSlider)
+        case greenSlider: setValue(forLabel: greenLabel, andTtextField: greenTextField, fromSlider: greenSlider)
+        default:          setValue(forLabel: blueLabel, andTtextField: blueTextField, fromSlider: blueSlider)
         }
         updateBackgroundColor()
     }
@@ -55,11 +67,19 @@ final class BackgroundSettingsViewController: UIViewController {
         )
     }
     
-    private func setValue(forLabel label: UILabel, fromSlider slider: UISlider) {
+    private func setValue(forLabel label: UILabel, andTtextField textField: UITextField, fromSlider slider: UISlider) {
         label.text = string(from: slider)
+        textField.text = string(from: slider)
     }
     
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
+    }
+    
+    private func setSlidersWith(color: UIColor) {
+        let ciColor = CIColor(color: currentColor)
+        redSlider.value = Float(ciColor.red)
+        greenSlider.value = Float(ciColor.green)
+        blueSlider.value = Float(ciColor.blue)
     }
 }

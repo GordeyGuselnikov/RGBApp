@@ -175,16 +175,19 @@
                     <connections>
                         <outlet property="blueLabel" destination="I2D-aS-fT0" id="ztH-1R-qA4"/>
                         <outlet property="blueSlider" destination="w7R-ru-IQp" id="dsf-pf-hQd"/>
+                        <outlet property="blueTextField" destination="U44-Mx-v9B" id="P70-hf-BdX"/>
                         <outlet property="greenLabel" destination="9zX-qd-JYj" id="NVm-Q9-V6E"/>
                         <outlet property="greenSlider" destination="yXK-XA-Q7x" id="VfK-PE-djF"/>
+                        <outlet property="greenTextField" destination="ya9-vJ-G6s" id="ug8-S5-qcu"/>
                         <outlet property="redLabel" destination="ow4-yP-jrF" id="3zL-jY-Urt"/>
                         <outlet property="redSlider" destination="LNb-ov-Mtf" id="KAx-UV-0vM"/>
+                        <outlet property="redTextField" destination="hSX-b3-Rgp" id="hG7-ny-KIy"/>
                         <outlet property="viewRGB" destination="sg8-5I-Nti" id="aOt-ys-nO9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1598" y="5"/>
+            <point key="canvasLocation" x="1569" y="5"/>
         </scene>
     </scenes>
     <resources>

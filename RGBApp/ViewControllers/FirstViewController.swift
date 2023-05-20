@@ -14,4 +14,10 @@ class FirstViewController: UIViewController {
 
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let backgroundSettingsVC = segue.destination as? BackgroundSettingsViewController else { return }
+        backgroundSettingsVC.currentColor = view.backgroundColor
+    }
+    
 }
