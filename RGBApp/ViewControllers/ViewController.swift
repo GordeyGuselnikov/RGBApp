@@ -9,6 +9,7 @@ import UIKit
 
 final class ViewController: UIViewController {
 
+    // MARK: - IB Outlets
     @IBOutlet weak var viewRGB: UIView!
     
     @IBOutlet weak var redLabel: UILabel!
@@ -19,6 +20,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +35,7 @@ final class ViewController: UIViewController {
         setValue(forLabel: blueLabel, fromSlider: blueSlider)
     }
     
+    // MARK: - IBActions
     @IBAction func slidersAction(_ sender: UISlider) {
         switch sender {
         case redSlider:   setValue(forLabel: redLabel, fromSlider: redSlider)
@@ -42,6 +45,7 @@ final class ViewController: UIViewController {
         updateBackgroundColor()
     }
     
+    // MARK: - Private Methods
     private func updateBackgroundColor() {
         viewRGB.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
