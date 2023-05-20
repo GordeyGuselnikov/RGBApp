@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol BackgroundSettingsViewControllerDelegate {
+    func updateView(color: UIColor)
+}
+
 final class BackgroundSettingsViewController: UIViewController {
 
     // MARK: - IB Outlets
@@ -26,7 +30,7 @@ final class BackgroundSettingsViewController: UIViewController {
     
     // MARK: - Public Properties
     var currentColor: UIColor!
-    
+    var delegate: BackgroundSettingsViewControllerDelegate!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -39,8 +43,6 @@ final class BackgroundSettingsViewController: UIViewController {
         
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
-        
-        updateBackgroundColor()
         
         setValue(forLabel: redLabel, andTtextField: redTextField, fromSlider: redSlider)
         setValue(forLabel: greenLabel, andTtextField: greenTextField, fromSlider: greenSlider)
@@ -57,14 +59,18 @@ final class BackgroundSettingsViewController: UIViewController {
         updateBackgroundColor()
     }
     
+    @IBAction func doneButtonTapped() {
+        delegate.updateView(color: viewRGB.backgroundColor ?? .blue)
+        dismiss(animated: true)
+    }
+    
     // MARK: - Private Methods
     private func updateBackgroundColor() {
         viewRGB.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
+            alpha: 1)
     }
     
     private func setValue(forLabel label: UILabel, andTtextField textField: UITextField, fromSlider slider: UISlider) {
@@ -78,6 +84,7 @@ final class BackgroundSettingsViewController: UIViewController {
     
     private func setSlidersWith(color: UIColor) {
         let ciColor = CIColor(color: currentColor)
+        
         redSlider.value = Float(ciColor.red)
         greenSlider.value = Float(ciColor.green)
         blueSlider.value = Float(ciColor.blue)

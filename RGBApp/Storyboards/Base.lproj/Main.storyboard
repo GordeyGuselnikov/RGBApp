@@ -160,11 +160,23 @@
                                     <constraint firstAttribute="height" constant="128" id="j3Z-c5-zE3"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCJ-Oo-MwW">
+                                <rect key="frame" x="128" y="503.5" width="64.5" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="doneButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vu-Xf-wSv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
                             <constraint firstItem="sg8-5I-Nti" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5jR-a8-frA"/>
+                            <constraint firstItem="sCJ-Oo-MwW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DW0-Bj-xK9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sCJ-Oo-MwW" secondAttribute="bottom" constant="30" id="Iaa-jk-dba"/>
                             <constraint firstItem="sg8-5I-Nti" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QCc-Uo-kYl"/>
                             <constraint firstItem="yui-84-ue1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bug-6W-Gvd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sg8-5I-Nti" secondAttribute="trailing" constant="16" id="gKW-uS-hrE"/>
