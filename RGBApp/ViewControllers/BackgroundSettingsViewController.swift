@@ -105,7 +105,7 @@ extension BackgroundSettingsViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text else { return }
-        if let currentValue = Float(text) {
+        if let currentValue = Float(text), currentValue <= 1 {
             switch textField {
             case redTextField:
                 redSlider.setValue(currentValue, animated: true)
@@ -119,7 +119,7 @@ extension BackgroundSettingsViewController: UITextFieldDelegate {
             }
             updateBackgroundColor()
         } else {
-            print("Error!!!")
+            textField.text = "Err"
         }
     }
 }
