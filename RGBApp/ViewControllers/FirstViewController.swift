@@ -8,11 +8,6 @@
 import UIKit
 
 final class FirstViewController: UIViewController {
-
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -20,7 +15,6 @@ final class FirstViewController: UIViewController {
         backgroundSettingsVC.delegate = self
         backgroundSettingsVC.currentColor = view.backgroundColor
     }
-    
 }
 
 // MARK: - BackgroundSettingsViewControllerDelegate
