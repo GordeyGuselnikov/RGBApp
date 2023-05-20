@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class BackgroundSettingsViewController: UIViewController {
 
     // MARK: - IB Outlets
     @IBOutlet weak var viewRGB: UIView!
