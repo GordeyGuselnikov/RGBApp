@@ -120,6 +120,18 @@ extension BackgroundSettingsViewController: UITextFieldDelegate {
             updateBackgroundColor()
         } else {
             textField.text = "Err"
+            showAlert(withTitle: "Wrong format!", andMessage: "Please enter number")
         }
+    }
+    
+}
+
+// MARK: - UIAlertController
+extension BackgroundSettingsViewController {
+    private func showAlert(withTitle title: String, andMessage message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
