@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol BackgroundSettingsViewControllerDelegate: AnyObject {
+    func updateView(color: UIColor)
+}
+
 final class FirstViewController: UIViewController {
     
     // MARK: - Navigation

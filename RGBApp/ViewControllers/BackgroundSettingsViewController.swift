@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol BackgroundSettingsViewControllerDelegate {
-    func updateView(color: UIColor)
-}
-
 final class BackgroundSettingsViewController: UIViewController {
 
     // MARK: - IB Outlets
@@ -30,7 +26,7 @@ final class BackgroundSettingsViewController: UIViewController {
     
     // MARK: - Public Properties
     var currentColor: UIColor!
-    var delegate: BackgroundSettingsViewControllerDelegate!
+    unowned var delegate: BackgroundSettingsViewControllerDelegate!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -51,6 +47,12 @@ final class BackgroundSettingsViewController: UIViewController {
         redTextField.delegate = self
         greenTextField.delegate = self
         blueTextField.delegate = self
+    }
+    
+    //
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     // MARK: - IBActions
@@ -77,7 +79,9 @@ final class BackgroundSettingsViewController: UIViewController {
             alpha: 1)
     }
     
-    private func setValue(forLabel label: UILabel, andTtextField textField: UITextField, fromSlider slider: UISlider) {
+    private func setValue(forLabel label: UILabel,
+                          andTtextField textField: UITextField,
+                          fromSlider slider: UISlider) {
         label.text = string(from: slider)
         textField.text = string(from: slider)
     }
@@ -97,11 +101,6 @@ final class BackgroundSettingsViewController: UIViewController {
 
 // MARK: - UITextFieldDelegate
 extension BackgroundSettingsViewController: UITextFieldDelegate {
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text else { return }
