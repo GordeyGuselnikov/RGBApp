@@ -120,10 +120,9 @@ extension BackgroundSettingsViewController: UITextFieldDelegate {
             updateBackgroundColor()
         } else {
             textField.text = "Err"
-            showAlert(withTitle: "Wrong format!", andMessage: "Please enter number")
+            showAlert(withTitle: "Wrong format!", andMessage: "Please enter a number between 0 and 1.00")
         }
     }
-    
 }
 
 // MARK: - UIAlertController
