@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HAf-JM-CTp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ibx-Xs-nrc">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -15,32 +15,20 @@
                     <view key="view" contentMode="scaleToFill" id="EzA-xq-jWJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4X-YS-F3o">
-                                <rect key="frame" x="0.0" y="32" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Settings background" id="CIp-9D-2dD">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="paintpalette" catalog="system" id="l6L-xu-dLa">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Kkb-9L-NRa"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hfU-nE-A6h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="t4X-YS-F3o" firstAttribute="top" secondItem="hfU-nE-A6h" secondAttribute="top" constant="32" id="17U-UU-fIV"/>
-                            <constraint firstItem="t4X-YS-F3o" firstAttribute="centerX" secondItem="EzA-xq-jWJ" secondAttribute="centerX" id="VKc-sV-XUY"/>
-                            <constraint firstItem="t4X-YS-F3o" firstAttribute="leading" secondItem="hfU-nE-A6h" secondAttribute="leading" id="oe5-AF-TUO"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="aYf-3G-Bkd">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="paintpalette" catalog="system" id="rco-mH-aWv">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Ngb-RJ-4En"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qe-uh-B3u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="5.28169014084507"/>
+            <point key="canvasLocation" x="1762.5" y="5.28169014084507"/>
         </scene>
         <!--Background Settings View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -199,7 +187,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1569" y="5"/>
+            <point key="canvasLocation" x="2565" y="4.225352112676056"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cyt-9S-dnf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ibx-Xs-nrc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dKA-x9-w2j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HAf-JM-CTp" kind="relationship" relationship="rootViewController" id="Jia-12-bLn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHA-7C-b1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936" y="5"/>
         </scene>
     </scenes>
     <resources>
