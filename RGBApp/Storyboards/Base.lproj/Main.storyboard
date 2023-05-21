@@ -19,7 +19,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4X-YS-F3o">
                                 <rect key="frame" x="0.0" y="32" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="CIp-9D-2dD">
+                                    <navigationItem title="Settings background" id="CIp-9D-2dD">
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="paintpalette" catalog="system" id="l6L-xu-dLa">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Kkb-9L-NRa"/>
