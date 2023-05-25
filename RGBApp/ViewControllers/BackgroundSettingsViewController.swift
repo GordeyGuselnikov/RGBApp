@@ -49,7 +49,6 @@ final class BackgroundSettingsViewController: UIViewController {
         blueTextField.delegate = self
     }
     
-    //
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
@@ -69,9 +68,12 @@ final class BackgroundSettingsViewController: UIViewController {
         delegate.updateView(color: viewRGB.backgroundColor ?? .blue)
         dismiss(animated: true)
     }
-    
-    // MARK: - Private Methods
-    private func updateBackgroundColor() {
+
+}
+
+// MARK: - Private Methods
+private extension BackgroundSettingsViewController {
+    func updateBackgroundColor() {
         viewRGB.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
@@ -79,18 +81,18 @@ final class BackgroundSettingsViewController: UIViewController {
             alpha: 1)
     }
     
-    private func setValue(forLabel label: UILabel,
-                          andTtextField textField: UITextField,
-                          fromSlider slider: UISlider) {
+    func setValue(forLabel label: UILabel,
+                  andTtextField textField: UITextField,
+                  fromSlider slider: UISlider) {
         label.text = string(from: slider)
         textField.text = string(from: slider)
     }
     
-    private func string(from slider: UISlider) -> String {
+    func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
     
-    private func setSlidersWith(color: UIColor) {
+    func setSlidersWith(color: UIColor) {
         let ciColor = CIColor(color: currentColor)
         
         redSlider.value = Float(ciColor.red)
@@ -126,9 +128,12 @@ extension BackgroundSettingsViewController: UITextFieldDelegate {
 
 // MARK: - UIAlertController
 extension BackgroundSettingsViewController {
-    private func showAlert(withTitle title: String, andMessage message: String) {
+    private func showAlert(withTitle title: String, andMessage message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) {_ in
+            textField?.text = "1.00"
+            textField?.becomeFirstResponder()
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
