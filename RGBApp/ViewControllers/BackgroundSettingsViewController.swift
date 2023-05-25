@@ -103,26 +103,32 @@ private extension BackgroundSettingsViewController {
 
 // MARK: - UITextFieldDelegate
 extension BackgroundSettingsViewController: UITextFieldDelegate {
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        if let currentValue = Float(text), currentValue <= 1 {
-            switch textField {
-            case redTextField:
-                redSlider.setValue(currentValue, animated: true)
-                redLabel.text = string(from: redSlider)
-            case greenTextField:
-                greenSlider.setValue(currentValue, animated: true)
-                greenLabel.text = string(from: greenSlider)
-            default:
-                blueSlider.setValue(currentValue, animated: true)
-                blueLabel.text = string(from: blueSlider)
-            }
-            updateBackgroundColor()
-        } else {
-            textField.text = "Err"
-            showAlert(withTitle: "Wrong format!", andMessage: "Please enter a number between 0 and 1.00")
+        guard let text = textField.text else {
+            showAlert(withTitle: "Wrong format!", andMessage: "Please enter correct value")
+            return
         }
+        
+        guard let currentValue = Float(text), (0...1).contains(currentValue) else {
+            showAlert(
+                withTitle: "Wrong format!",
+                andMessage: "Please enter a number between 0 and 1.00",
+                textField: textField)
+            return
+        }
+        
+        switch textField {
+        case redTextField:
+            redSlider.setValue(currentValue, animated: true)
+            redLabel.text = string(from: redSlider)
+        case greenTextField:
+            greenSlider.setValue(currentValue, animated: true)
+            greenLabel.text = string(from: greenSlider)
+        default:
+            blueSlider.setValue(currentValue, animated: true)
+            blueLabel.text = string(from: blueSlider)
+        }
+        updateBackgroundColor()
     }
 }
 
