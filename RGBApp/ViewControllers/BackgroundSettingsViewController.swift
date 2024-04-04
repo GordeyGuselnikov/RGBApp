@@ -32,11 +32,11 @@ final class BackgroundSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewRGB.layer.cornerRadius = 10
+
         viewRGB.backgroundColor = currentColor
         setSlidersWith(color: currentColor)
-        
-        viewRGB.layer.cornerRadius = 10
-        
+                
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         
@@ -73,11 +73,12 @@ final class BackgroundSettingsViewController: UIViewController {
 
 // MARK: - Private Methods
 private extension BackgroundSettingsViewController {
+    
     func updateBackgroundColor() {
         viewRGB.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
+            red: redSlider.value.cgFloat(),
+            green: greenSlider.value.cgFloat(),
+            blue: blueSlider.value.cgFloat(),
             alpha: 1)
     }
     
@@ -144,3 +145,11 @@ extension BackgroundSettingsViewController {
         present(alert, animated: true)
     }
 }
+
+extension Float { //такой Extension не подписываем как MARK!
+    func cgFloat() -> CGFloat {
+        CGFloat(self)
+    }
+}
+
+/// Сделать кнопку done над клавой
