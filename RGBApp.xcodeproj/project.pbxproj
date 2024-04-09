@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		8F7A9FCC2A0021EF0029E2B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A9FCB2A0021EF0029E2B8 /* AppDelegate.swift */; };
 		8F7A9FCE2A0021EF0029E2B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A9FCD2A0021EF0029E2B8 /* SceneDelegate.swift */; };
-		8F7A9FD02A0021EF0029E2B8 /* BackgroundSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A9FCF2A0021EF0029E2B8 /* BackgroundSettingsViewController.swift */; };
+		8F7A9FD02A0021EF0029E2B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A9FCF2A0021EF0029E2B8 /* SettingsViewController.swift */; };
 		8F7A9FD32A0021EF0029E2B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7A9FD12A0021EF0029E2B8 /* Main.storyboard */; };
 		8F7A9FD52A0021F10029E2B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F7A9FD42A0021F10029E2B8 /* Assets.xcassets */; };
 		8F7A9FD82A0021F10029E2B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7A9FD62A0021F10029E2B8 /* LaunchScreen.storyboard */; };
-		8FDCC9082A193178004E5649 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCC9072A193178004E5649 /* FirstViewController.swift */; };
+		8FDCC9082A193178004E5649 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCC9072A193178004E5649 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8F7A9FC82A0021EF0029E2B8 /* RGBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7A9FCB2A0021EF0029E2B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F7A9FCD2A0021EF0029E2B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8F7A9FCF2A0021EF0029E2B8 /* BackgroundSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSettingsViewController.swift; sourceTree = "<group>"; };
+		8F7A9FCF2A0021EF0029E2B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8F7A9FD22A0021EF0029E2B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F7A9FD42A0021F10029E2B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F7A9FD72A0021F10029E2B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F7A9FD92A0021F10029E2B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FDCC9072A193178004E5649 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		8FDCC9072A193178004E5649 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +96,8 @@
 		8FDCC9042A1926F1004E5649 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8FDCC9072A193178004E5649 /* FirstViewController.swift */,
-				8F7A9FCF2A0021EF0029E2B8 /* BackgroundSettingsViewController.swift */,
+				8FDCC9072A193178004E5649 /* MainViewController.swift */,
+				8F7A9FCF2A0021EF0029E2B8 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -130,7 +130,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					8F7A9FC72A0021EF0029E2B8 = {
 						CreatedOnToolsVersion = 14.2;
@@ -173,10 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F7A9FD02A0021EF0029E2B8 /* BackgroundSettingsViewController.swift in Sources */,
+				8F7A9FD02A0021EF0029E2B8 /* SettingsViewController.swift in Sources */,
 				8F7A9FCC2A0021EF0029E2B8 /* AppDelegate.swift in Sources */,
 				8F7A9FCE2A0021EF0029E2B8 /* SceneDelegate.swift in Sources */,
-				8FDCC9082A193178004E5649 /* FirstViewController.swift in Sources */,
+				8FDCC9082A193178004E5649 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +238,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -298,6 +299,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
